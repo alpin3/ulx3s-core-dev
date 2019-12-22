@@ -15,6 +15,9 @@ build:
 push:
 	docker push $(IMAGE):v$(VERSION)
 
+pull:
+	docker pull $(IMAGE):v$(VERSION)
+
 latest:
 	docker tag $(IMAGE):v$(VERSION) $(IMAGE):latest
 	docker push $(IMAGE):latest
