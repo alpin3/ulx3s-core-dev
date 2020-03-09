@@ -20,10 +20,14 @@ pull:
 
 latest:
 	docker tag $(IMAGE):v$(VERSION) $(IMAGE):latest
+
+pushlatest:
 	docker push $(IMAGE):latest
 
 gittag:
 	git tag v$(VERSION)
+
+pushtags:
 	git push --tags origin master
 
 bins:
