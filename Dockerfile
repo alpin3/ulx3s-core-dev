@@ -3,7 +3,7 @@ MAINTAINER kost - https://github.com/kost
 
 ENV ULX3SBASEDIR=/opt
 
-RUN apk --update add git bash curl wget build-base libusb-dev libusb-compat-dev libftdi1-dev python3 libtool automake autoconf make cmake pkgconf py2-pip gengetopt linux-headers && \
+RUN apk --update add git bash curl wget build-base libusb-dev libusb-compat-dev libftdi1-dev python3 libtool automake autoconf make cmake pkgconf py2-pip gengetopt linux-headers eudev-dev argp-standalone && \
  rm -f /var/cache/apk/* && \
  echo "Success [deps]"
 
@@ -27,6 +27,14 @@ RUN cd $ULX3SBASEDIR && \
  cp $ULX3SBASEDIR/patches/Makefile.gcc . && \
  CFLAGS="-I/opt/libusb0/include -I/opt/libftdi/include -L/opt/libusb0/lib -L/opt/libftdi/lib" make -f Makefile.gcc && \
  install -m 755 -s ujprog /usr/local/bin && \
+ cd $ULX3SBASEDIR && \
+ git clone https://github.com/trabucayre/openFPGALoader && \
+ cd openFPGALoader && \
+ patch -p1 < $ULX3SBASEDIR/patches/openfpgaloader.diff && \
+ mkdir build && \
+ cd build && \
+ cmake .. && \
+ make install/strip && \
  cd $ULX3SBASEDIR && \
  git clone https://git.code.sf.net/p/openocd/code openocd && \
  cd openocd && \
