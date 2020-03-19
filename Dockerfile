@@ -30,10 +30,9 @@ RUN cd $ULX3SBASEDIR && \
  cd $ULX3SBASEDIR && \
  git clone https://github.com/trabucayre/openFPGALoader && \
  cd openFPGALoader && \
- patch -p1 < $ULX3SBASEDIR/patches/openfpgaloader.diff && \
  mkdir build && \
  cd build && \
- cmake .. && \
+ cmake -DBUILD_STATIC=ON .. && \
  make install/strip && \
  cd $ULX3SBASEDIR && \
  git clone https://git.code.sf.net/p/openocd/code openocd && \
