@@ -5,6 +5,18 @@
 
 ulx3s FPGA - core utils with source
 
+# Binaries
+
+Following binaries are available:
+
+  - ujprog
+  - openFPGALoader
+  - openocd
+  - ftx_prog
+  - FleaFPGA-JTAG
+  - tinyfpgasp
+  - mpy-cross
+
 # Run
 
 If you don't plan repluggin the FPGA often, just run with device path where your FPGA is connected:
