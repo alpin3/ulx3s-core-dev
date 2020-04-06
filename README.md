@@ -10,6 +10,7 @@ ulx3s FPGA - core utils with source
 Following binaries are available:
 
   - ujprog
+  - fujprog
   - openFPGALoader
   - openocd
   - ftx_prog
