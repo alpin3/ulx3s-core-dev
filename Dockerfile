@@ -31,7 +31,7 @@ RUN cd $ULX3SBASEDIR && \
  git clone https://github.com/kost/fujprog && \
  cd fujprog && \
  mkdir build && cd build && \
- cmake -DBUILD_STATIC=ON -DLIBFTDISTATIC=/opt/libftdi/lib/libftdi.a -DLIBUSB0STATIC=/opt/libusb0/lib/libusb.a -DLIBFTDI_INCLUDE=/opt/libftdi/include .. && \
+ cmake -DBUILD_STATIC=ON .. && \
  make install/strip && \
  cd $ULX3SBASEDIR && \
  git clone https://github.com/trabucayre/openFPGALoader && \
