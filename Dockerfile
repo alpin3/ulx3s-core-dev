@@ -5,12 +5,11 @@ ENV ULX3SBASEDIR=/opt
 
 RUN apk --update add git bash curl wget build-base libusb-dev libusb-compat-dev libftdi1-dev python3 libtool automake autoconf make cmake pkgconf py2-pip gengetopt linux-headers eudev-dev argp-standalone && \
  rm -f /var/cache/apk/* && \
- echo "Success [deps]"
+ echo "[i] Success [deps]"
 
 COPY root /
 
 RUN cd $ULX3SBASEDIR && \
- git clone https://github.com/emard/ulx3s-bin && \
  cd $ULX3SBASEDIR && \
  git clone https://github.com/kost/libusb0 libusb0-git && \
  cd libusb0-git && \
