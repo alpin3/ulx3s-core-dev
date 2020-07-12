@@ -5,7 +5,7 @@ ENV ULX3SBASEDIR=/opt
 
 RUN apk --update add git bash curl wget build-base libusb-dev libusb-compat-dev libftdi1-dev python3 libtool automake autoconf make cmake pkgconf py2-pip gengetopt linux-headers eudev-dev argp-standalone && \
  rm -f /var/cache/apk/* && \
- echo "[i] Success [deps]"
+ echo "[i] Success [v5] [deps]"
 
 COPY root /
 
@@ -74,7 +74,7 @@ RUN cd $ULX3SBASEDIR && \
  pip3 install esptool && \
  pip3 install pyserial && \
  cd $ULX3SBASEDIR && \
- echo "Success [build]"
+ echo "[i] Success [build]"
 
 #VOLUME ["/fpga"]
 #WORKDIR /fpga
